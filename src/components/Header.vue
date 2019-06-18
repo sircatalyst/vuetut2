@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    props: {
+    props: { 
         title: {
             type: String
         }
@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         changeTitle: function() {
-            this.title = "Vue Witch"
+            this.$emite = ("changeTitle", 'Vue Wizards');
         }
     }
 }
