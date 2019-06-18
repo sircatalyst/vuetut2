@@ -2,7 +2,7 @@
   <div>
     <!-- <ninjas></ninjas> -->
     <app-header></app-header>
-    <app-ninjas></app-ninjas>
+    <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
     <app-footer></app-footer>
   </div>
 </template>
@@ -22,7 +22,14 @@ export default {
   },
   data () {
     return {
-      title: 'Ninja App'
+       ninjas: [
+           {name: 'Ryu', speciality: 'Vue Components', show: false},
+           {name: 'Crystal', speciality: 'Html Wizandary', show: false},
+           {name: 'Hitoshi', speciality: 'Click Events', show: false},
+           {name: 'Tango', speciality: 'Conditionals', show: false},
+           {name: 'Kanmi', speciality: 'Webpack', show: false},
+           {name: 'Yoshi', speciality: 'Dummy data', show: false},
+       ]
     }
   },
 

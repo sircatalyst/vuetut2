@@ -11,20 +11,19 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-       ninjas: [
-           {name: 'Ryu', speciality: 'Vue Components', show: false},
-           {name: 'Crystal', speciality: 'Html Wizandary', show: false},
-           {name: 'Hitoshi', speciality: 'Click Events', show: false},
-           {name: 'Tango', speciality: 'Conditionals', show: false},
-           {name: 'Kanmi', speciality: 'Webpack', show: false},
-           {name: 'Yoshi', speciality: 'Dummy data', show: false},
-       ]
-    }
-  },
 
+export default {
+    props: {
+        ninjas: {
+            type: Array,
+            required: true
+        }
+    },
+    data () {
+        return {
+        
+        }
+    }
 }
 </script>
 
