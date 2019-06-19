@@ -8,7 +8,7 @@
       <h2 slot="title">{{ title1 }}</h2>
       <p slot="text">I am the paragraph for the slot</p>
     </form-helper>
-    
+
     <form-helper2>
       <div slot="form-header">
         <h3>This is the title of the form</h3>
@@ -22,6 +22,11 @@
         <button v-on:click="handleSubmit">Submit</button>
       </div>
     </form-helper2>
+    <keep-alive>
+      <component v-bind:is="component"></component>
+    </keep-alive>
+    <button v-on:click="component = 'form-one'">Show form one</button>
+    <button v-on:click="component = 'form-two'">Show form two</button>
   </div>
 </template>
 
@@ -33,6 +38,9 @@ import Ninjas from './components/Ninjas';
 import formHelper from './components/FormHelper';
 import formHelper2 from './components/FormHelper2';
 
+import formOne from './components/formOne';
+import formTwo from './components/formTwo';
+
 export default {
   components: {
     // 'ninjas': Ninjas 
@@ -41,6 +49,8 @@ export default {
     'app-ninjas': Ninjas,
     'form-helper': formHelper,
     'form-helper2': formHelper2,
+    'form-one': formOne,
+    'form-two': formTwo,
   },
   data () {
     return {
@@ -53,17 +63,25 @@ export default {
            {name: 'Yoshi', speciality: 'Dummy data', show: false},
        ],
        title: "Vue Ninjas",
-       title1: "I am a dynamic slot title"
+       title1: "I am a dynamic slot title",
+       component: 'form-one'
     }
   },
   methods: {
     updateTitle: function(updateTitle) {
       this.title = updateTitle;
+    },
+
+    handleSubmit: function(){
+      alert('thanks for submitting');
     }
   }
 }
 </script>
 
-<style scoped>
-
+<style>
+body{
+    margin: 0;
+    font-family: 'Nunito SemiBold';
+}
 </style>
