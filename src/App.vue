@@ -4,6 +4,24 @@
     <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
     <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
     <app-footer v-bind:title="title"></app-footer>
+    <form-helper>
+      <h2 slot="title">{{ title1 }}</h2>
+      <p slot="text">I am the paragraph for the slot</p>
+    </form-helper>
+    
+    <form-helper2>
+      <div slot="form-header">
+        <h3>This is the title of the form</h3>
+        <p>Information about the form</p>
+      </div>
+      <div slot="form-fields">
+        <input type="text" placeholder="name" required />
+        <input type="password" placeholder="password" required />
+      </div>
+      <div slot="form-controls">
+        <button v-on:click="handleSubmit">Submit</button>
+      </div>
+    </form-helper2>
   </div>
 </template>
 
@@ -12,6 +30,8 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Ninjas from './components/Ninjas';
+import formHelper from './components/FormHelper';
+import formHelper2 from './components/FormHelper2';
 
 export default {
   components: {
@@ -19,6 +39,8 @@ export default {
     'app-header': Header,
     'app-footer': Footer,
     'app-ninjas': Ninjas,
+    'form-helper': formHelper,
+    'form-helper2': formHelper2,
   },
   data () {
     return {
@@ -30,7 +52,8 @@ export default {
            {name: 'Kanmi', speciality: 'Webpack', show: false},
            {name: 'Yoshi', speciality: 'Dummy data', show: false},
        ],
-       title: "Vue Ninjas"
+       title: "Vue Ninjas",
+       title1: "I am a dynamic slot title"
     }
   },
   methods: {
@@ -42,7 +65,5 @@ export default {
 </script>
 
 <style scoped>
-  h1{
-    color:purple;
-  }
+
 </style>
