@@ -29,6 +29,7 @@
     <button v-on:click="component = 'form-two'">Show form two</button>
     <add-blog></add-blog>
     <show-blogs></show-blogs>
+    <list-blogs></list-blogs>
   </div>
 </template>
 
@@ -45,6 +46,7 @@ import formTwo from './components/formTwo';
 
 import addBlog from './components/addBlog';
 import showBlogs from './components/showBlogs';
+import listBlog from './components/listBlog';
 
 export default {
   components: {
@@ -58,6 +60,7 @@ export default {
     'form-two': formTwo,
     "add-blog": addBlog,
     "show-blogs": showBlogs,
+    "list-blogs": listBlog,
   },
   data () {
     return {
