@@ -27,9 +27,10 @@
     </keep-alive>
     <button v-on:click="component = 'form-one'">Show form one</button>
     <button v-on:click="component = 'form-two'">Show form two</button>
-    <add-blog></add-blog>
-    <show-blogs></show-blogs>
-    <list-blogs></list-blogs>
+    <!-- <add-blog></add-blog> -->
+    <!-- <show-blogs></show-blogs> -->
+    <!-- <list-blogs></list-blogs> -->
+    <router-view></router-view>
   </div>
 </template>
 
