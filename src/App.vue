@@ -27,6 +27,7 @@
     </keep-alive>
     <button v-on:click="component = 'form-one'">Show form one</button>
     <button v-on:click="component = 'form-two'">Show form two</button>
+    <add-blog></add-blog>
   </div>
 </template>
 
@@ -41,6 +42,8 @@ import formHelper2 from './components/FormHelper2';
 import formOne from './components/formOne';
 import formTwo from './components/formTwo';
 
+import addBlog from './components/addBlog';
+
 export default {
   components: {
     // 'ninjas': Ninjas 
@@ -51,6 +54,7 @@ export default {
     'form-helper2': formHelper2,
     'form-one': formOne,
     'form-two': formTwo,
+    "add-blog": addBlog,
   },
   data () {
     return {
