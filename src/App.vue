@@ -30,6 +30,7 @@
     <!-- <add-blog></add-blog> -->
     <!-- <show-blogs></show-blogs> -->
     <!-- <list-blogs></list-blogs> -->
+    <app-header1></app-header1>
     <router-view></router-view>
   </div>
 </template>
@@ -49,6 +50,9 @@ import addBlog from './components/addBlog';
 import showBlogs from './components/showBlogs';
 import listBlog from './components/listBlog';
 
+import header from './components/header1';
+
+
 export default {
   components: {
     // 'ninjas': Ninjas 
@@ -62,6 +66,8 @@ export default {
     "add-blog": addBlog,
     "show-blogs": showBlogs,
     "list-blogs": listBlog,
+
+    "app-header1": header,
   },
   data () {
     return {
